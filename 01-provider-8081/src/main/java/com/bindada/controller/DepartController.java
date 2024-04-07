@@ -13,22 +13,22 @@ public class DepartController {
     @Autowired
     private DepartService service;
 
-    @PostMapping("/")
+    @PostMapping("/save")
     public boolean saveHandle(@RequestBody  Depart depart){
         return service.saveDepart(depart);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public boolean deleteHandle(@PathVariable("id") int id){
         return service.removeDepartId(id);
     }
 
-    @PutMapping("/")
+    @PutMapping("/update")
     public boolean updateHandle(@RequestBody Depart depart){
         return service.modifyDepart(depart);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public Depart getHandle(@PathVariable("id") int id){
         return service.getDepartById(id);
     }
