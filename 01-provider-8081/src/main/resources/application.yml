@@ -1,17 +1,23 @@
 server:
   port: 8081
 
+#微服务名称
 spring:
   application:
-    name: 01-provider-8081
+    name: depart-provider
+
+  #nacos注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
 
   jpa:
-
     generate-ddl: true
-
     hibernate:
       ddl-auto: update
-
     show-sql: true
 
  #数据库配置
@@ -24,10 +30,8 @@ spring:
 
 
 logging:
-
   pattern:
     console: level-%level %msg%n
-
   level:
     root: info
     org.hibernate: info

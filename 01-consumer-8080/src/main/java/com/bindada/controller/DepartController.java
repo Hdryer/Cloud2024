@@ -13,8 +13,11 @@ public class DepartController {
     @Autowired
     private RestTemplate template;
 
-    private  static final String SERVICE_PROCIER="http://localhost:8081/provider/depart";
+    //直连方式
+    //private  static final String SERVICE_PROCIER="http://localhost:8081/provider/depart";
 
+    //微服务方式
+    private  static final String SERVICE_PROCIER="http://depart-provider/provider/depart";
     @PostMapping("/save")
     public boolean saveHandle(@RequestBody Depart depart){
         String url = SERVICE_PROCIER+"/save";
