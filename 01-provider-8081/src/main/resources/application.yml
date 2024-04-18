@@ -24,6 +24,9 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     name: defaultDataSource
+    #公司环境
+    #url: jdbc:mysql://192.168.16.129:3306/test?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    #居家环境
     url: jdbc:mysql://192.168.0.188:3306/test?characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
     password: "123456"
